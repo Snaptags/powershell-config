@@ -19,6 +19,11 @@ I have to commit to a subversion repository. After my first accidental dcommit f
 #### sudo
 „sudo“ without any arguments opens a new powershell with admin rights. „sudo application“ starts the application with elevated rights.
 
+#### es
+Finds files using Voidtools' Everything. Based on https://github.com/DBremen/PowerShellScripts
+You need do download and install the commandline tool via http://www.voidtools.com/es.zip
+![Alt text](/images/powershell_es.png?raw=true "blazing fast everything search results")
+
 #### printcolors
 I use a very strange color scheme in ComEmu, optimized to look good when opening vim. To get a matching powerline prompt for the shell I used this alias.
 ![Alt text](/images/powershell_colors.png?raw=true "shell colors and what they actually look like")
