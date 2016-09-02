@@ -45,6 +45,8 @@ function Get-ESSearchResult {
     }
 	$result = & (Resolve-Path $esPath).Path $SearchTerm
     if($result.Count -gt 1){
+        #$result = $result | Out-GridView -PassThru
+    }
     foreach($record in $result){
         switch ($PSBoundParameters){
 	        { $_.ContainsKey("CopyFullPath") } { $record | clip }
@@ -55,7 +57,6 @@ function Get-ESSearchResult {
                                                     select Name,DirectoryName,@{Name="Size";Expression={$_.Length | Get-FileSize }},LastWriteTime
                                                }
         }
-    }
     }
 }
 
