@@ -10,6 +10,21 @@ filter Get-FileSize {
 	)
 }
 
+function Get-ESItemProperty {
+    Param
+        (
+         $record
+        )
+    if ((Test-Path $record -ErrorAction SilentlyContinue) -eq $true) {
+        return $record | Get-ItemProperty;
+    }
+    $result = New-Object System.Object
+    $result | Add-Member -type NoteProperty -name Name -value (Split-Path "$record" -leaf)
+    $result | Add-Member -type NoteProperty -name DirectoryName -value (Split-Path "$record")
+    $result | Add-Member -type NoteProperty -name LastWriteTime -value "?"
+    return $result
+}
+
 function Get-ESSearchResult {
     [CmdletBinding()]
     Param
@@ -35,8 +50,8 @@ function Get-ESSearchResult {
 	        { $_.ContainsKey("CopyFullPath") } { $record | clip }
 	        { $_.ContainsKey("OpenItem") }     { if (Test-Path $record -PathType Leaf) {  & "$record" } }
 	        { $_.ContainsKey("OpenFolder") }   {  & "explorer.exe" /select,"$(Split-Path $record)" }
-	        { $_.ContainsKey("AsObject") }     { $record | Get-ItemProperty }
-	        default                            { $record | Get-ItemProperty | 
+	        { $_.ContainsKey("AsObject") }     { Get-ESItemProperty($record) }
+	        default                            { Get-ESItemProperty($record) |
                                                     select Name,DirectoryName,@{Name="Size";Expression={$_.Length | Get-FileSize }},LastWriteTime
                                                }
         }
