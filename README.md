@@ -6,6 +6,10 @@ This is my Windows powershell config to be used with [ConEmu](https://github.com
 The directory listing uses a fork of https://github.com/Davlind/PSColor/:
 ![Alt text](/images/powershell_ls.png?raw=true "directory listing")
 
+## Requirements
+
+Install-Module PsReadline
+
 ## Aliases
 
 #### ls -la
