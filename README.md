@@ -7,8 +7,12 @@ The directory listing uses a fork of https://github.com/Davlind/PSColor/:
 ![Alt text](/images/powershell_ls.png?raw=true "directory listing")
 
 ## Requirements
-
+- https://github.com/lzybkr/PSReadLine
+- https://github.com/dahlbyk/posh-git
+```
 Install-Module PsReadline
+Install-Module posh-git -Scope CurrentUser
+```
 
 ## Aliases
 
