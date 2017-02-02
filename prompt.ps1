@@ -41,7 +41,12 @@ function Write-PromptSegment {
 }
 
 function Get-FancyDir {
-    return $(Get-Location).ToString().Replace($env:USERPROFILE, '~').Replace('\', ' ⮁ ');
+    $max = 40;
+    $dir = $(Get-Location).ToString();
+    if($dir.length -gt $max) {
+        $dir = $dir -replace "^([^\\]+)\\([^\\]+)\\.+\\(.*)",'$1\$2\…\$3'
+    }
+    return $dir.Replace($env:USERPROFILE, '~').Replace('\', ' ⮁ ');
 }
 
 function Get-GitBranch {
