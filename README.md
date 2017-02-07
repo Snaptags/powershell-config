@@ -3,16 +3,36 @@ This is my Windows powershell config to be used with [ConEmu](https://github.com
 
 ![Alt text](/images/powershell.png?raw=true "Basic look of the prompt in ConEmu")
 
-The directory listing uses a fork of https://github.com/Davlind/PSColor/:
-![Alt text](/images/powershell_ls.png?raw=true "directory listing")
+## Prompt only
+### Requirements
+- https://github.com/Snaptags/powershell-config/blob/master/prompt.ps1
+- https://github.com/gabrielelana/awesome-terminal-fonts
 
-## Requirements
+### Setup
+- Copy the prompt.ps1 file to a location of your choice. Make sure it is UTF-8 format.
+- Install a powerline enabled font from the second of the links provided above.
+- open the ConEmu settings and apply the new font, e.g.:
+![Alt text](/images/conemu_main.png?raw=true "ConEmu Settings/Main")
+- you have to modify the Startup Task, too:
+![Alt text](/images/conemu_startup.png?raw=true "ConEmu Settings/Startup/Tasks")
+```
+powershell.exe -NoExit -file "d:\prompt.ps1"
+```
+
+## Advanced features (git status, aliases, etc.)
+
+### Requirements
 - https://github.com/lzybkr/PSReadLine
 - https://github.com/dahlbyk/posh-git
 ```
 Install-Module PsReadline
 Install-Module posh-git -Scope CurrentUser
 ```
+
+The directory listing uses a fork of https://github.com/Davlind/PSColor/:
+![Alt text](/images/powershell_ls.png?raw=true "directory listing")
+
+## Colored directory listing
 
 ## Aliases
 
