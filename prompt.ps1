@@ -44,7 +44,7 @@ function Write-PromptSegment {
 function Get-FancyDir {
     $max = $script:max_path_length;
     $dir = $(Get-Location).ToString();
-    if($dir.length -gt $max) {
+    if (($max -gt 0) -and ($dir.length -gt $max)) {
         $dir = $dir -replace "^([^\\]+)\\([^\\]+)\\.+\\(.*)",'$1\$2\…\$3'
     }
     return $dir.Replace($env:USERPROFILE, '~').Replace('\', ' ⮁ ');
