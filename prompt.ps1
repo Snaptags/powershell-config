@@ -3,6 +3,7 @@ $script:bg    = [Console]::BackgroundColor;
 $script:admin = $false;
 $script:first = $true;
 $script:last  = 0;
+$script:max_path_length = 40;
 
 If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
     [Security.Principal.WindowsBuiltInRole] “Administrator”))
@@ -41,7 +42,7 @@ function Write-PromptSegment {
 }
 
 function Get-FancyDir {
-    $max = 40;
+    $max = $script:max_path_length;
     $dir = $(Get-Location).ToString();
     if($dir.length -gt $max) {
         $dir = $dir -replace "^([^\\]+)\\([^\\]+)\\.+\\(.*)",'$1\$2\…\$3'
