@@ -18,6 +18,18 @@ This is my Windows powershell config to be used with [ConEmu](https://github.com
 ```
 powershell.exe -NoExit -file "d:\prompt.ps1"
 ```
+### Path shortening
+
+I don't like it when the paths are getting too long, especially when working in git folders. So I added a path shortener to prompt.ps1:
+![Alt text](/images/pathlength.png?raw=true "Abbreviate too long directories")
+You can change the behaviour by editing prompt.ps1:
+```
+$script:max_path_length = 40;
+```
+Set this to 0 to turn path shortening OFF. Note beyond: you can always get the full path by entering 'pwd' in the shell prompt:
+```
+PS > pwd
+```
 
 ## Advanced features (git status, aliases, etc.)
 
