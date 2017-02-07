@@ -144,7 +144,7 @@ function Write-PromptDir {
 
 # Depends on posh-git
 function Write-PromptGit {
-    if(Get-GitDirectory) {
+    if (Get-Command -Name Get-GitDirectory -errorAction SilentlyContinue) {
         Write-PromptSegment " $(Get-GitStatusText)" DarkBlue White
     }
 }
