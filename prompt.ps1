@@ -67,10 +67,10 @@ function Get-GitStatusText {
     $global:GitPromptSettings.DelimBackgroundColor = [ConsoleColor]::DarkBlue
 
     $global:GitPromptSettings.AfterText = ''
-    $global:GitPromptSettings.FileAddedText                               = '+'
-    $global:GitPromptSettings.FileModifiedText                            = '~'
-    $global:GitPromptSettings.FileRemovedText                             = '-'
-    $global:GitPromptSettings.FileConflictedText                          = '!'
+    #$global:GitPromptSettings.FileAddedText                               = '+'
+    #$global:GitPromptSettings.FileModifiedText                            = '~'
+    #$global:GitPromptSettings.FileRemovedText                             = '-'
+    #$global:GitPromptSettings.FileConflictedText                          = '!'
 
     $global:GitPromptSettings.LocalWorkingStatusSymbol                    = '!'
     $global:GitPromptSettings.LocalWorkingStatusForegroundColor           = [ConsoleColor]::DarkRed
