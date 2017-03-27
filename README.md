@@ -14,6 +14,11 @@ This is my Windows powershell config to be used with [ConEmu](https://github.com
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 ```
+- install http://psget.net/  
+```
+(new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+```
+
 - Install a powerline enabled font from the second of the links provided above.
 - open the ConEmu settings and apply the new font, e.g.:
 ![Alt text](/images/conemu_main.png?raw=true "ConEmu Settings/Main")
@@ -51,6 +56,12 @@ The directory listing uses a fork of https://github.com/Davlind/PSColor/:
 ## Colored directory listing
 ```
 Install-Module PSColor
+```
+
+## Quick Jump
+- https://github.com/tkellogg/Jump-Location
+```
+Install-Module Jump.Location
 ```
 
 ## Aliases
