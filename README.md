@@ -10,6 +10,10 @@ This is my Windows powershell config to be used with [ConEmu](https://github.com
 
 ### Setup
 - Copy the prompt.ps1 file to a location of your choice. Make sure it is UTF-8 format.
+- allow powershell to execute scripts:  
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+```
 - Install a powerline enabled font from the second of the links provided above.
 - open the ConEmu settings and apply the new font, e.g.:
 ![Alt text](/images/conemu_main.png?raw=true "ConEmu Settings/Main")
@@ -45,6 +49,9 @@ The directory listing uses a fork of https://github.com/Davlind/PSColor/:
 ![Alt text](/images/powershell_ls.png?raw=true "directory listing")
 
 ## Colored directory listing
+```
+Install-Module PSColor
+```
 
 ## Aliases
 
