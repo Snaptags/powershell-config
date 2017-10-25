@@ -17,6 +17,12 @@ function CallGit
             }
         }
     }
+    if ($args[0] -eq "commit") {
+        &{npm run -s precommit}
+        if ($lastExitCode -eq 1) {
+            return
+        }
+    }
     &"git.exe" @args
 }
 Set-Alias -Name git -Value CallGit -Description "Avoid an accidental git svn dcommit on a local branch"
