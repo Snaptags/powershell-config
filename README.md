@@ -60,9 +60,19 @@ Install-Module PSColor
 
 ## Quick Jump
 - https://github.com/tkellogg/Jump-Location
+
+Open Powershell as admin:
 ```
 Install-Module Jump.Location
 ```
+
+Open Powershell as user:
+```
+c:
+cd \Program Files\WindowsPowerShell\Modules\Jump.Location\0.6.0\
+.\Install.ps1
+```
+
 
 ## Aliases
 
