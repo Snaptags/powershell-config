@@ -59,18 +59,17 @@ Install-Module PSColor
 ```
 
 ## Quick Jump
-- https://github.com/tkellogg/Jump-Location
+- use ZLocation instead of Jump-Location
+- https://github.com/vors/ZLocation
 
-Open Powershell as admin:
+Open Powershell:
 ```
-Install-Module Jump.Location
+Install-Module ZLocation -Scope CurrentUser
 ```
 
-Open Powershell as user:
+add to profile.ps1:
 ```
-c:
-cd \Program Files\WindowsPowerShell\Modules\Jump.Location\0.6.0\
-.\Install.ps1
+Import-Module ZLocation
 ```
 
 

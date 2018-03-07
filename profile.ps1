@@ -6,3 +6,4 @@
 . "$PSScriptRoot\PSReadLine.ps1"
 . "$PSScriptRoot\prompt.ps1"
 Import-Module PSColor
+Import-Module ZLocation
