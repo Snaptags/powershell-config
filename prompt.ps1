@@ -47,7 +47,7 @@ function Get-FancyDir {
     if (($max -gt 0) -and ($dir.length -gt $max)) {
         $dir = $dir -replace "^([^\\]+)\\([^\\]+)\\.+\\(.*)",'$1\$2\…\$3'
     }
-    return $dir.Replace($env:USERPROFILE, '~').Replace('\', ' ⮁ ');
+    return $dir.Replace($env:USERPROFILE, '~').Replace('\', '  ');
 }
 
 function Get-GitBranch {
@@ -60,7 +60,7 @@ function Get-GitBranch {
 }
 
 function Get-GitStatusText {
-    Write-PromptSegment " ⭠ " DarkBlue White
+    Write-PromptSegment "  " DarkBlue White
     $global:GitPromptSettings.BeforeText = ""
     $global:GitPromptSettings.BeforeBackgroundColor = [ConsoleColor]::DarkBlue
     $global:GitPromptSettings.DelimForegroundColor = [ConsoleColor]::White
