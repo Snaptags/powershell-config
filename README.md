@@ -13,10 +13,7 @@ This is my Windows powershell config to be used with [ConEmu](https://github.com
 - allow powershell to execute scripts:  
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-```
-- install http://psget.net/  
-```
-(new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
 ```
 
 - Install a powerline enabled font from the second of the links provided above.
