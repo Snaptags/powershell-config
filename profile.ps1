@@ -5,5 +5,8 @@
 . "$PSScriptRoot\Get-ESSearchResult.ps1"
 . "$PSScriptRoot\PSReadLine.ps1"
 . "$PSScriptRoot\prompt.ps1"
+Import-Module TabExpansionPlusPlus
+Import-Module NPMTabCompletion
 Import-Module PSColor
 Import-Module ZLocation
+$Env:LESSCHARSET="utf8"
