@@ -69,6 +69,13 @@ add to profile.ps1:
 Import-Module ZLocation
 ```
 
+## NPM tab completion
+```
+Install-Module TabExpansionPlusPlus -AllowClobber
+Install-Module NPMTabCompletion -AllowClobber
+```
+
+
 
 ## Aliases
 
