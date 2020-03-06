@@ -4,7 +4,7 @@ function CallNodeReplace
     node $env:USERPROFILE\AppData\Roaming\npm\node_modules\replace\bin\replace.js $args
 }
 
-function OpenShellAsAdmin([string]$application = 'powershell -NoExit -File "' + "$PSScriptRoot/profile.ps1" + '"')
+function OpenShellAsAdmin([string]$application = 'pwsh -NoLogo -NoExit -File "' + "$PSScriptRoot/profile.ps1" + '"')
 {
     ConEmuC -c $application $args -new_console:a
 }
