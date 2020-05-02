@@ -7,7 +7,6 @@
 Import-Module TabExpansionPlusPlus
 Import-Module NPMTabCompletion
 Import-Module PSColor
-Import-Module ZLocation
 Import-Module posh-git
 Import-Module oh-my-posh
 $DefaultUser = 'LAM'
