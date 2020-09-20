@@ -10,6 +10,7 @@ Import-Module PSColor
 Import-Module posh-git
 Import-Module oh-my-posh
 $DefaultUser = 'LAM'
-$ThemeSettings.GitSymbols.BranchIdenticalStatusToSymbol = [char]0x2261 # Three horizontal lines
+$ThemeSettings.GitSymbols.BranchIdenticalStatusToSymbol = [char]0x2261 # Three horizontal lines: ≡
+$ThemeSettings.GitSymbols.BranchUntrackedSymbol = [char]0xF127 # Disconnected: 
 Set-Theme Agnoster
 $Env:LESSCHARSET="utf8"
