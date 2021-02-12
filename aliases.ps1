@@ -4,9 +4,14 @@ function CallNodeReplace
     node $env:USERPROFILE\AppData\Roaming\npm\node_modules\replace\bin\replace.js $args
 }
 
-function OpenShellAsAdmin([string]$application = 'pwsh -NoLogo -NoExit -File "' + "$PSScriptRoot/profile.ps1" + '"')
+function OpenShellAsAdmin([string]$application = 'pwsh')
 {
-    ConEmuC -c $application $args -new_console:a
+    $path = (get-command $application).Path
+    if ($application -eq "pwsh") {
+        ConEmuC -c $path -NoLogo $args -new_console:a
+    } else {
+        Start-Process $path $args -Verb RunAs
+    }
 }
 
 function MyLS
